@@ -54,6 +54,17 @@ var hasCycle = function(head) {
 };
 
 
+//字典
+var hasCycle = function(head) {
+    const map = new Map();
+    let p = head;
+    while(p){
+        if(map.has(p)) return true;
+        map.set(p, 1);
+        p = p.next;
+    }
+    return false;
+};
 
 //instance原理，遍历原型链
  
@@ -65,3 +76,5 @@ const instanceOf = (a, b) => {
     }
     return false;
 }
+
+

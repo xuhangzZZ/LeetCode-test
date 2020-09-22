@@ -31,3 +31,15 @@ var reverseList = function(head) {
     }
     return p2;
 };
+
+
+//尾递归
+var reverseList = function(head) {
+    const reverse = (pre, cur) => {
+        if(!cur) return pre;
+        const tem = cur.next;
+        cur.next = pre;
+        return reverse(cur, tem);
+    }
+    return reverse(null, head);
+};

@@ -17,6 +17,8 @@
  * @param {number} target
  * @return {number[]}
  */
+
+ //哈希表
 var twoSum = function(nums, target) {
     const map = new Map();
     for(let i = 0; i < nums.length; i++){
@@ -27,6 +29,16 @@ var twoSum = function(nums, target) {
         }
         else{
             map.set(n1,i);
+        }
+    }
+};
+
+//暴力
+var twoSum = function(nums, target) {
+    for(let i = 0; i < nums.length - 1; i++){
+        for(j = i + 1; j < nums.length; j++){
+            if(nums[i] + nums[j] === target)
+            return [i,j];
         }
     }
 };
